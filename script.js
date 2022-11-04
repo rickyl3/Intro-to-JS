@@ -4,6 +4,8 @@ function greet() {
 function initialize() {
     num1 = 3;
     num2 = 7;
+    messageOutput = document.getElementById("output");
+    message = "";
 }
 function addNumbers() {
     var result = num1 + num2;
@@ -53,11 +55,19 @@ function toggleNegatives() {
     negativesAllowed = !negativesAllowed;
     display();
 }
+// function display() {
+//     numberOutput.innerHTML = myNumber;
+//     if (!negativesAllowed) {
+//         negativeButton.innerHTML = "Negatives are OFF";
+//     } else {
+//         negativeButton.innerHTML = "Negatives are ON";
+//     }
+// }
 function display() {
-    numberOutput.innerHTML = myNumber;
-    if (!negativesAllowed) {
-        negativeButton.innerHTML = "Negatives are OFF";
-    } else {
-        negativeButton.innerHTML = "Negatives are ON";
-    }
+    messageOutput.innerHTML = message;
+}
+function addCharacter(ch) {
+    message += ch;
+    display();
+    console.log(message);
 }
